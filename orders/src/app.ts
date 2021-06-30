@@ -19,8 +19,6 @@ app.use(
 );
 app.use(currentUser);
 
-app.use(errorHandler);
-
 app.use(newOrderRouter);
 app.use(indexOrderRouter);
 app.use(showOrderRouter);
@@ -29,5 +27,7 @@ app.use(deleteOrderRouter);
 app.all('*', async (req, res) => {
   throw new NotFoundError();
 });
+
+app.use(errorHandler);
 
 export { app };
