@@ -5,8 +5,6 @@ import { Order } from '../../models/order';
 import { OrderStatus } from '@csltickets/common';
 import { stripe } from '../../stripe';
 import { Payment } from '../../models/payment';
-import { PaymentCreatedPublisher } from '../../events/publishers/payment-created-publisher';
-import { natsWrapper } from '../nats-wrapper';
 
 it('returns a 404 when purchasing an order that does not exist', async () => {
   await request(app)
